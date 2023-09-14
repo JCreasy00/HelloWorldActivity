@@ -10,17 +10,25 @@ class MainActivity : AppCompatActivity() {
 
     // Declare view properties - the first one is done for you
     lateinit var displayTextView: TextView
+    lateinit var nameEditView: EditText
+    lateinit var clickMeButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Initialize with views defined in Layout - the first one is done for you
+        // Initialize properties with associated views
         displayTextView = findViewById(R.id.displayTextView)
+        nameEditView = findViewById(R.id.nameEditText)
+        clickMeButton = findViewById(R.id.clickMeButton)
 
-        
-        // Respond to button click event per specifications
+        // Add a click listener to the button
+        clickMeButton.setOnClickListener {
+            // Get the entered text from the EditText
+            val enteredText = nameEditView.text.toString()
 
-
+            // Update the TextView with the entered text
+            displayTextView.text = "Hello, $enteredText!"
+        }
     }
 }
