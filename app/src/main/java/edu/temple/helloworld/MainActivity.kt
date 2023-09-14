@@ -28,7 +28,10 @@ class MainActivity : AppCompatActivity() {
             val enteredText = nameEditView.text.toString()
 
             // Update the TextView with the entered text
-            displayTextView.text = "Hello, $enteredText!"
+            val greeting = "Hello, $enteredText!"
+
+            // Actually display the greeting string in the TextView
+            displayTextView.text = greeting
         }
     }
 }
